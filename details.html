@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Jogo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main id="details-page-container">
+        <a href="index.html" class="back-link">&larr; Voltar para a Biblioteca</a>
+        <div id="game-details-content"></div>
+        <button id="save-details-btn" class="save-button">Salvar Alterações</button>
+    </main>
+
+    <div id="notes-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Anotações do Jogo</h2>
+            <div id="notes-list" class="item-list"></div>
+            <form id="add-note-form" class="modal-form">
+                <h3>Adicionar Nova Anotação</h3>
+                <input type="text" id="note-title" placeholder="Título da anotação" required>
+                <textarea id="note-content" placeholder="Escreva sua anotação aqui..." required></textarea>
+                <button type="submit">Salvar Anotação</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="links-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Links Úteis</h2>
+            <div id="links-list" class="item-list"></div>
+            <form id="add-link-form" class="modal-form">
+                <h3>Adicionar Novo Link</h3>
+                <input type="text" id="link-description" placeholder="Descrição (ex: Detonado, Wiki)" required>
+                <input type="url" id="link-url" placeholder="https://..." required>
+                <button type="submit">Salvar Link</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="details.js"></script>
+</body>
+</html>

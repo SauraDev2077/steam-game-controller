@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Controlador de Jogos</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Meu Controlador de Jogos</h1>
+    </header>
+
+    
+        <main>
+    <div id="main-content-wrapper">
+        <section class="form-container">
+            <h2>Adicionar Novo Jogo</h2>
+            <form id="add-game-form">
+                <input type="text" id="game-title" placeholder="Nome do Jogo" required>
+                <select id="game-status" required>
+                    <option value="">-- Status --</option>
+                    <option value="Jogando">Jogando</option>
+                    <option value="Finalizado">Finalizado</option>
+                    <option value="Backlog">Backlog (Na Fila)</option>
+                    <option value="Pausado">Pausado</option>
+                </select>
+                <input type="number" id="game-rating" placeholder="Nota (0-10)" min="0" max="10" step="0.5">
+                <div class="file-upload-wrapper">
+                    <label for="game-cover" class="file-upload-button">Escolher Imagem</label>
+                    <input type="file" id="game-cover" accept="image/*" required>
+                    <span id="file-name" class="file-name-display">Nenhum arquivo selecionado</span>
+                </div>
+                <button type="submit">Adicionar Jogo</button>
+            </form>
+        </section>
+
+        <section id="bulletin-board">
+            <h2>Mural de Recados</h2>
+            <button id="add-note-btn">Adicionar Nota</button>
+            <div id="notes-grid"></div>
+        </section>
+
+        <section id="external-sites">
+            <h2>Sites Externos</h2>
+            <div class="sites-grid">
+    <a href="https://isthereanydeal.com" target="_blank" class="site-link">
+        <img src="img/isthereanydeal.png" alt="IsThereAnyDeal">
+    </a>
+    <a href="https://steamdb.info/sales/history/" target="_blank" class="site-link">
+        <img src="img/nextsteamsale.png" alt="Next Steam Sale Countdown">
+    </a>
+    <a href="https://www.steamgriddb.com/" target="_blank" class="site-link">
+        <img src="img/steamgrid.png" alt="SteamGridDB">
+    </a>
+</div>
+
+<div class="add-site-container">
+                <p class="add-site-prompt">Tem mais algum site em mente?</p>
+                <button id="add-site-button">Adicionar</button>
+            </div>
+            <div id="custom-sites-grid" class="sites-grid"></div>
+
+        </section>
+
+    </div>
+
+        <section id="game-list-container">
+            <h2>Minha Biblioteca</h2>
+            <div id="game-list">
+                </div>
+        </section>
+
+    <div id="bulletin-note-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Criar Novo Recado</h2>
+            <form id="add-bulletin-note-form">
+    <input type="text" id="bulletin-note-title" placeholder="Título do recado" required>
+    <textarea id="bulletin-note-content" placeholder="Escreva seu recado aqui..." required></textarea>
+    <select id="game-link-select" required>
+        <option value="">-- Vincular ao Jogo --</option>
+    </select>
+    <button type="submit">Salvar Recado</button>
+</form>
+        </div>
+    </div>
+
+<div id="all-notes-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Todos os Recados</h2>
+        <div id="all-notes-list" class="item-list"></div>
+    </div>
+</div>
+
+<div id="add-site-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Adicionar Novo Site</h2>
+        <form id="add-site-form">
+            <input type="url" id="site-url-input" placeholder="https://exemplo.com" required>
+            <div class="file-upload-wrapper">
+                <label for="site-image-input" class="file-upload-button">Escolher Imagem</label>
+                <input type="file" id="site-image-input" accept="image/*" required>
+                <span id="site-file-name" class="file-name-display">Nenhum arquivo</span>
+            </div>
+            <div class="modal-actions">
+                <button type="button" id="add-site-cancel-btn" class="modal-button cancel">Cancelar</button>
+                <button type="submit" class="modal-button save">Concluir</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+</main>
+
+    <script src="script.js"></script>
+</body>
+</html>
